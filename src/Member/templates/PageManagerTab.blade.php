@@ -1,4 +1,4 @@
-<link href="/src/Geelhoed/geelhoed.css" type="text/css" rel="stylesheet" />
+<link href="/vendor/cyndaron/module-geelhoed/src/geelhoed.css" type="text/css" rel="stylesheet" />
 
 <div id="geelhoed-membermanager">
     @component('Widget/Toolbar')

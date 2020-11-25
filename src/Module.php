@@ -38,13 +38,13 @@ final class Module implements Datatypes, Routes, UrlProvider, UserMenu
                 'singular' => 'Lid',
                 'plural' => 'Leden',
                 'pageManagerTab' => PageManagerTabs::class . '::membersTab',
-                'pageManagerJS' => '/src/Geelhoed/Member/js/PageManagerTab.js',
+                'pageManagerJS' => '/vendor/cyndaron/module-geelhoed/src/Member/js/PageManagerTab.js',
             ]),
             'contest' => Datatype::fromArray([
                 'singular' => 'Wedstrijd',
                 'plural' => 'Wedstrijden',
                 'pageManagerTab' => PageManagerTabs::class . '::contestsTab',
-                'pageManagerJS' => '/src/Geelhoed/Contest/js/ContestManager.js',
+                'pageManagerJS' => '/vendor/cyndaron/module-geelhoed/src/Contest/js/ContestManager.js',
             ]),
         ];
     }

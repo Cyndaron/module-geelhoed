@@ -289,7 +289,7 @@ final class ContestController extends Controller
     {
         $contests = PageManagerTabs::contestsTab();
         $page = new Page('Overzicht wedstrijden', $contests);
-        $page->addScript('/src/Geelhoed/Contest/js/ContestManager.js');
+        $page->addScript('/vendor/cyndaron/module-geelhoed/src/Contest/js/ContestManager.js');
         return new Response($page->render());
     }
 

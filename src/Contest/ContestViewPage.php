@@ -27,7 +27,7 @@ final class ContestViewPage extends Page
             'deleteDateCsrfToken' => User::getCSRFToken('contest', 'deleteDate'),
             'due' => $user !== null ? $this->getTotalDue($user) : 0.00,
         ]);
-        $this->addScript('/src/Geelhoed/Contest/js/ContestViewPage.js');
+        $this->addScript('/vendor/cyndaron/module-geelhoed/src/Contest/js/ContestViewPage.js');
     }
 
     private function loggedInUserMayViewOtherContestants(bool $currentUserCanManageContests, array $controlledMembers): bool

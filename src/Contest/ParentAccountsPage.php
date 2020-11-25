@@ -13,7 +13,7 @@ final class ParentAccountsPage extends Page
         parent::__construct('Lijst ouderaccounts');
 
         $users = User::fetchAll(['id IN (SELECT `userId` FROM `user_rights` WHERE `right` = ?)'], [Contest::RIGHT_PARENT]);
-        $this->addScript('/src/Geelhoed/Contest/js/ParentAccountsManager.js');
+        $this->addScript('/vendor/cyndaron/module-geelhoed/src/Contest/js/ParentAccountsManager.js');
         $this->addTemplateVars([
             'users' => $users,
         ]);
