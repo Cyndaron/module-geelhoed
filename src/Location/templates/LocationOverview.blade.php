@@ -3,7 +3,7 @@
 @section ('contents')
     @if (!empty($locNotification))
         <div class="alert alert-info">
-            {{ $locNotification }}
+            {!! $locNotification !!}
         </div>
     @endif
 
