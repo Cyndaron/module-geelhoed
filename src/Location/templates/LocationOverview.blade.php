@@ -9,6 +9,8 @@
 
     @php /** @var \Cyndaron\Geelhoed\Location\Location[] $locations*/ @endphp
     @foreach ($locations as $location)
+        @php $hoursPerWeekday = $location->getHoursSortedByWeekday() @endphp
+        @if (count($hoursPerWeekday) === 0) @continue @endif
         <div class="card location-card">
             <div class="card-header">
                 <h2>{{ $location->city }}, {{ $location->name ?: ($location->street) }}</h2>
@@ -19,7 +21,7 @@
 
                 <a href="/location/view/{{ $location->id }}">Meer informatie</a>
 
-                @foreach ($location->getHoursSortedByWeekday() as $weekDay => $hours)
+                @foreach ($hoursPerWeekday as $weekDay => $hours)
                     <h4>{{ \Cyndaron\Template\ViewHelpers::getDutchWeekday($weekDay) }}</h4>
 
                     <table class="table table-striped table-bordered location-overview">
