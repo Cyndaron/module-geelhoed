@@ -19,6 +19,7 @@
             @php $deleteToken = \Cyndaron\User\User::getCSRFToken('contest', 'deleteParentAccount') @endphp
             @php $deleteFromToken = \Cyndaron\User\User::getCSRFToken('contest', 'deleteFromParentAccount') @endphp
             @php $addToToken = \Cyndaron\User\User::getCSRFToken('contest', 'addToParentAccount') @endphp
+            @php $resetPasswordToken = \Cyndaron\User\User::getCSRFToken('user', 'resetpassword') @endphp
             @php $contestants = \Cyndaron\Geelhoed\Member\Member::fetchAll(['isContestant = 1'], [], 'ORDER BY lastname') @endphp
             @foreach ($users as $user)
                 @php $controlledMembers = \Cyndaron\Geelhoed\Member\Member::fetchAllByUser($user) @endphp
@@ -45,7 +46,8 @@
 
                     </td>
                     <td>
-                        <button data-id="{{ $user->id }}" data-csrf-token="{{ $deleteToken }}" class="btn btn-danger gpm-delete-parent-account"><span class="glyphicon glyphicon-trash"></span></button>
+                        <button data-id="{{ $user->id }}" data-csrf-token="{{ $resetPasswordToken }}" class="btn btn-sm btn-outline-cyndaron gpm-reset-password"><span class="glyphicon glyphicon-repeat"></span></button>
+                        <button data-id="{{ $user->id }}" data-csrf-token="{{ $deleteToken }}" class="btn btn-sm btn-danger gpm-delete-parent-account"><span class="glyphicon glyphicon-trash"></span></button>
                     </td>
                 </tr>
             @endforeach

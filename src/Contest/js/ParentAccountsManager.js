@@ -35,6 +35,14 @@ $(document).ready(function()
         });
     });
 
+    $('.gpm-reset-password').on('click', function () {
+        let id = $(this).data('id');
+        let csrfToken = $(this).data('csrf-token');
+        $.post('/api/user/resetpassword/' + id, { csrfToken: csrfToken }).done(function () {
+            alert('Wachtwoord gereset.');
+        });
+    });
+
     $('.gpm-delete-parent-account').on('click', function () {
         let element = $(this);
 
