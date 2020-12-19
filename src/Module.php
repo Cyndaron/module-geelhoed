@@ -14,6 +14,8 @@ use Cyndaron\Geelhoed\Reservation\ReservationController;
 use Cyndaron\Module\Datatype;
 use Cyndaron\Module\Datatypes;
 use Cyndaron\Module\Routes;
+use Cyndaron\Module\Templated;
+use Cyndaron\Module\TemplateRoot;
 use Cyndaron\Module\UrlProvider;
 use Cyndaron\Module\UserMenu;
 use Cyndaron\User\User;
@@ -21,7 +23,7 @@ use Cyndaron\User\UserLevel;
 use function implode;
 use function array_key_exists;
 
-final class Module implements Datatypes, Routes, UrlProvider, UserMenu
+final class Module implements Datatypes, Routes, UrlProvider, UserMenu, Templated
 {
     /**
      * @return Datatype[]
@@ -115,5 +117,10 @@ final class Module implements Datatypes, Routes, UrlProvider, UserMenu
         }
 
         return $ret;
+    }
+
+    public function getTemplateRoot(): TemplateRoot
+    {
+        return new TemplateRoot('Geelhoed', 'vendor/cyndaron/module-geelhoed/src');
     }
 }
