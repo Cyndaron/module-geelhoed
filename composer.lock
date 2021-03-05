@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d1f777894411a1b01e927e18cbbe7f0",
+    "content-hash": "9a1ef93271458881c99fe027549ccab2",
     "packages": [
         {
             "name": "components/jquery",
@@ -117,6 +117,55 @@
                 }
             ],
             "time": "2020-08-23T12:54:47+00:00"
+        },
+        {
+            "name": "cyndaron/module",
+            "version": "v1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cyndaron/module.git",
+                "reference": "b09235a4f5a24344c25ed8c5535d9bea41c85e3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cyndaron/module/zipball/b09235a4f5a24344c25ed8c5535d9bea41c85e3d",
+                "reference": "b09235a4f5a24344c25ed8c5535d9bea41c85e3d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "thecodingmachine/safe": "^1.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phan/phan": "^3.0",
+                "phpstan/phpstan": "^0.12.42",
+                "roave/security-advisories": "dev-master",
+                "thecodingmachine/phpstan-safe-rule": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cyndaron\\Module\\": "src/"
+                }
+            },
+            "scripts": {
+                "phpstan": [
+                    "vendor/bin/phpstan analyse src --level 8"
+                ],
+                "cscheck": [
+                    "vendor/bin/php-cs-fixer fix src/ --allow-risky=yes --dry-run --diff"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Module system for Cyndaron",
+            "support": {
+                "source": "https://github.com/Cyndaron/module/tree/v1",
+                "issues": "https://github.com/Cyndaron/module/issues"
+            },
+            "time": "2021-03-05T11:17:39+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -5008,5 +5057,5 @@
         "php": "^7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
