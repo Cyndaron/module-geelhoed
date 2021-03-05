@@ -121,6 +121,6 @@ final class Module implements Datatypes, Routes, UrlProvider, UserMenu, Template
 
     public function getTemplateRoot(): TemplateRoot
     {
-        return new TemplateRoot('Geelhoed', 'vendor/cyndaron/module-geelhoed/src');
+        return new TemplateRoot('Geelhoed', __DIR__);
     }
 }
