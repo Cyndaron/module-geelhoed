@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Contest;
 
-use Cyndaron\DBConnection;
-use Cyndaron\Model;
+use Cyndaron\DBAL\DBConnection;
+use Cyndaron\DBAL\Model;
 use function assert;
 
 final class ContestDate extends Model

@@ -2,7 +2,7 @@
 namespace Cyndaron\Geelhoed;
 
 use Cyndaron\Geelhoed\Member\Member;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use function array_key_exists;
 
 final class MemberGraduation extends Model

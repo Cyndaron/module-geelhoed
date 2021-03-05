@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Member;
 
-use Cyndaron\DBConnection;
+use Cyndaron\DBAL\DBConnection;
 use Cyndaron\Geelhoed\Graduation;
 use Cyndaron\Geelhoed\Hour\Hour;
 use Cyndaron\Geelhoed\MemberGraduation;
 use Cyndaron\Geelhoed\Sport;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use Cyndaron\Page;
 use Cyndaron\User\User;
 use Cyndaron\Util;

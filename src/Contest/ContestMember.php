@@ -3,7 +3,7 @@ namespace Cyndaron\Geelhoed\Contest;
 
 use Cyndaron\Geelhoed\Graduation;
 use Cyndaron\Geelhoed\Member\Member;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use Cyndaron\User\User;
 use function assert;
 use function count;

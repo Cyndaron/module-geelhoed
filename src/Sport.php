@@ -1,7 +1,7 @@
 <?php
 namespace Cyndaron\Geelhoed;
 
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 
 final class Sport extends Model
 {

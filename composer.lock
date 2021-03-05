@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a1ef93271458881c99fe027549ccab2",
+    "content-hash": "bdd7d316947551c28b58d9c0e5feffa1",
     "packages": [
         {
             "name": "components/jquery",
@@ -117,6 +117,55 @@
                 }
             ],
             "time": "2020-08-23T12:54:47+00:00"
+        },
+        {
+            "name": "cyndaron/dbal",
+            "version": "v1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Cyndaron/dbal.git",
+                "reference": "83fb54e526378294df0c1a9183a4f3703d11c780"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Cyndaron/dbal/zipball/83fb54e526378294df0c1a9183a4f3703d11c780",
+                "reference": "83fb54e526378294df0c1a9183a4f3703d11c780",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "thecodingmachine/safe": "^1.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phan/phan": "^3.0",
+                "phpstan/phpstan": "^0.12.42",
+                "roave/security-advisories": "dev-master",
+                "thecodingmachine/phpstan-safe-rule": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cyndaron\\DBAL\\": "src/"
+                }
+            },
+            "scripts": {
+                "phpstan": [
+                    "vendor/bin/phpstan analyse src --level 8"
+                ],
+                "cscheck": [
+                    "vendor/bin/php-cs-fixer fix src/ --allow-risky=yes --dry-run --diff"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Database access layer for Cyndaron",
+            "support": {
+                "source": "https://github.com/Cyndaron/dbal/tree/v1",
+                "issues": "https://github.com/Cyndaron/dbal/issues"
+            },
+            "time": "2021-03-05T11:51:03+00:00"
         },
         {
             "name": "cyndaron/module",

@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Reservation;
 
-use Cyndaron\DBConnection;
+use Cyndaron\DBAL\DBConnection;
 use Cyndaron\Geelhoed\Hour\Hour;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use DateInterval;
 use DatePeriod;
 use DateTimeImmutable;

@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Location;
 
-use Cyndaron\DBConnection;
+use Cyndaron\DBAL\DBConnection;
 use Cyndaron\Geelhoed\Hour\Hour;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use function urlencode;
 use function implode;
 

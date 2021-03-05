@@ -2,7 +2,7 @@
 namespace Cyndaron\Geelhoed\Contest;
 
 use Cyndaron\Routing\Controller;
-use Cyndaron\DBConnection;
+use Cyndaron\DBAL\DBConnection;
 use Cyndaron\Geelhoed\Member\Member;
 use Cyndaron\Geelhoed\PageManagerTabs;
 use Cyndaron\Geelhoed\Sport;
@@ -193,7 +193,7 @@ final class ContestController extends Controller
      * @param string $description
      * @param float $price
      * @param string $redirectUrl
-     * @throws \Cyndaron\Error\ImproperSubclassing
+     * @throws \Cyndaron\DBAL\ImproperSubclassing
      * @throws \Mollie\Api\Exceptions\ApiException
      * @return Response
      */

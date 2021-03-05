@@ -1,7 +1,7 @@
 <?php
 namespace Cyndaron\Geelhoed;
 
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use function array_key_exists;
 
 final class Graduation extends Model

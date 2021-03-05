@@ -3,7 +3,7 @@ namespace Cyndaron\Geelhoed\Contest;
 
 use Cyndaron\Geelhoed\Member\Member;
 use Cyndaron\Geelhoed\Sport;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use Cyndaron\User\User;
 use Cyndaron\Util;
 

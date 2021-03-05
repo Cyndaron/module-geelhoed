@@ -6,7 +6,7 @@ namespace Cyndaron\Geelhoed\Hour;
 use Cyndaron\Geelhoed\Department;
 use Cyndaron\Geelhoed\Location\Location;
 use Cyndaron\Geelhoed\Sport;
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 use Cyndaron\Template\ViewHelpers;
 
 use function Safe\sprintf;

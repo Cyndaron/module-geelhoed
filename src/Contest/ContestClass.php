@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Contest;
 
-use Cyndaron\Model;
+use Cyndaron\DBAL\Model;
 
 class ContestClass extends Model
 {
