@@ -68,6 +68,7 @@
             </select>
         @endslot
         @slot('right')
+            <a href="/member/directDebitList" class="btn btn-outline-cyndaron">Incassolijst</a>
             <button type="button" id="gum-new" class="btn btn-success" data-toggle="modal" data-target="#gum-edit-user-dialog">
                 <span class="glyphicon glyphicon-plus"></span>Nieuw lid
             </button>

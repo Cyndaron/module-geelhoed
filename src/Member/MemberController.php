@@ -26,6 +26,10 @@ final class MemberController extends Controller
         'save' => ['level' => UserLevel::ADMIN, 'function' => 'save']
     ];
 
+    protected array $getRoutes = [
+        'directDebitList' => ['level' => UserLevel::ADMIN, 'function' => 'directDebitList'],
+    ];
+
     public function get(): JsonResponse
     {
         $id = $this->queryBits->getInt(2);
@@ -207,5 +211,12 @@ final class MemberController extends Controller
         }
 
         return new JsonResponse();
+    }
+
+    public function directDebitList(): Response
+    {
+        $directDebits = DirectDebit::load();
+        $page = new DirectDebitListPage($directDebits);
+        return new Response($page->render());
     }
 }
