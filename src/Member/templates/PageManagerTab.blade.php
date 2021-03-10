@@ -243,7 +243,7 @@
                             <div class="card-header" id="heading{{ $location->id }}">
                                 <h5 class="mb-0">
                                     <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ $location->id }}" aria-expanded="true" aria-controls="collapse{{ $location->id }}">
-                                        {{ $location->getName() }}
+                                        {{ $location->city }}, {{ $location->getName() }}
                                     </button>
                                 </h5>
                             </div>
