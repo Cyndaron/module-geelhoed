@@ -201,6 +201,7 @@
 
                     <h4>Betaalgegevens</h4>
                     @include('Widget/Form/Checkbox', ['id' => 'freeParticipation', 'label' => 'Mag gratis meedoen'])
+                    @include('Widget/Form/Number', ['id' => 'discount', 'label' => 'Korting', 'value' => 0.00, 'min' => '', 'step' => 0.01])
                     @include('Widget/Form/Checkbox', ['id' => 'temporaryStop', 'label' => 'Tijdelijke stop'])
                     @include('Widget/Form/Select', ['id' => 'paymentMethod', 'label' => 'Betaalwijze', 'options' => \Cyndaron\Geelhoed\Member\Member::PAYMENT_METHODS])
                     @include('Widget/Form/BasicInput', ['id' => 'iban', 'label' => 'IBAN-nummer', 'value' => ''])

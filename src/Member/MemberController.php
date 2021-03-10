@@ -179,6 +179,7 @@ final class MemberController extends Controller
         $member->paymentProblem = $post->getBool('paymentProblem');
         $member->paymentProblemNote = $post->getHTML('paymentProblem');
         $member->freeParticipation = $post->getBool('freeParticipation');
+        $member->discount = $post->getFloat('discount');
         $member->temporaryStop = $post->getBool('temporaryStop');
         $joinedAt = $post->getDate('joined');
         if ($joinedAt !== '')

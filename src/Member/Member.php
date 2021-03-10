@@ -26,7 +26,7 @@ use function array_filter;
 final class Member extends Model
 {
     public const TABLE = 'geelhoed_members';
-    public const TABLE_FIELDS = ['userId', 'parentEmail', 'phoneNumbers', 'isContestant', 'paymentMethod', 'iban', 'ibanHolder', 'paymentProblem', 'paymentProblemNote', 'freeParticipation', 'temporaryStop', 'joinedAt', 'jbnNumber', 'jbnNumberLocation'];
+    public const TABLE_FIELDS = ['userId', 'parentEmail', 'phoneNumbers', 'isContestant', 'paymentMethod', 'iban', 'ibanHolder', 'paymentProblem', 'paymentProblemNote', 'freeParticipation', 'discount', 'temporaryStop', 'joinedAt', 'jbnNumber', 'jbnNumberLocation'];
 
     public int $userId;
     public string $parentEmail = '';
@@ -38,6 +38,7 @@ final class Member extends Model
     public bool $paymentProblem = false;
     public string $paymentProblemNote = '';
     public bool $freeParticipation = false;
+    public float $discount;
     public bool $temporaryStop = false;
     public ?string $joinedAt = null;
     public string $jbnNumber = '';
@@ -180,21 +181,26 @@ final class Member extends Model
      */
     public function getMonthlyFeeRaw(): float
     {
-        $isSenior = $this->isSenior();
+        if ($this->freeParticipation)
+        {
+            return 0.00;
+        }
         $sports = $this->getSports();
         if (count($sports) === 0)
         {
             return 0.00;
         }
+        $isSenior = $this->isSenior();
+        $discount = $this->discount;
         if (count($sports) === 1)
         {
             $sport = reset($sports);
             if ($isSenior)
             {
-                return $sport->seniorFee;
+                return $sport->seniorFee - $discount;
             }
 
-            return $sport->juniorFee;
+            return $sport->juniorFee - $discount;
         }
 
         $highestFee = 0.00;
@@ -207,7 +213,7 @@ final class Member extends Model
             }
         }
 
-        return $highestFee + 5.00;
+        return ($highestFee + 5.00) - $discount;
     }
 
     /**
