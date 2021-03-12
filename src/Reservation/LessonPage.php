@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace Cyndaron\Geelhoed\Reservation;
 
 use Cyndaron\Geelhoed\Hour\Hour;
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 use DateTimeInterface;
 
 final class LessonPage extends Page

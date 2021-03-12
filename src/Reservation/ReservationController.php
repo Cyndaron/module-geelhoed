@@ -10,7 +10,7 @@ namespace Cyndaron\Geelhoed\Reservation;
 
 use Cyndaron\Error\ErrorPageResponse;
 use Cyndaron\Geelhoed\Hour\Hour;
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 use Cyndaron\Request\QueryBits;
 use Cyndaron\Request\RequestParameters;
 use Cyndaron\Routing\Controller;

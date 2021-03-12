@@ -2,8 +2,8 @@
 namespace Cyndaron\Geelhoed\Hour;
 
 use Cyndaron\Geelhoed\Member\Member;
-use Cyndaron\Page;
-use Cyndaron\Template\ViewHelpers;
+use Cyndaron\View\Page;
+use Cyndaron\View\Template\ViewHelpers;
 
 use function Safe\sprintf;
 

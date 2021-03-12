@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Cyndaron\Geelhoed\Contest;
 
 use Cyndaron\Geelhoed\Graduation;
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 
 final class EditSubscriptionPage extends Page
 {

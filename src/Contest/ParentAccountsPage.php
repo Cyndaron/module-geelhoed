@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Contest;
 
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 use Cyndaron\User\User;
 
 final class ParentAccountsPage extends Page

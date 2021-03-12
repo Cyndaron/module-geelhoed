@@ -6,7 +6,7 @@ namespace Cyndaron\Geelhoed;
 use Cyndaron\Geelhoed\Contest\Contest;
 use Cyndaron\Geelhoed\Location\Location;
 use Cyndaron\Geelhoed\Member\Member;
-use Cyndaron\Template\Template;
+use Cyndaron\View\Template\Template;
 
 final class PageManagerTabs
 {

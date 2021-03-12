@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Reservation;
 
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 
 final class ReserveStepLastPage extends Page
 {

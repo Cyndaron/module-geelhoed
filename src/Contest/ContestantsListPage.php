@@ -5,7 +5,7 @@ namespace Cyndaron\Geelhoed\Contest;
 
 use Cyndaron\Geelhoed\Member\Member;
 use Cyndaron\Geelhoed\Sport;
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 
 final class ContestantsListPage extends Page
 {

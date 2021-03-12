@@ -18,7 +18,23 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/Cyndaron/view"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/Cyndaron/util"
+    },
+    {
+      "type": "vcs",
       "url":  "https://github.com/Cyndaron/Cyndaron"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/Cyndaron/module-minecraft"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/Cyndaron/module-ticketsale"
     }
   ],
   "minimum-stability": "dev",
@@ -31,7 +47,9 @@
     "symfony/http-foundation": "^5.0",
     "thecodingmachine/safe": "^1.1",
     "cyndaron/module": "^1.0",
-    "cyndaron/dbal": "^1.0"
+    "cyndaron/dbal": "^1.0",
+    "cyndaron/view": "^1.0",
+    "cyndaron/util": "^1.0"
   },
   "require-dev": {
     "cyndaron/cyndaron": "dev-master",

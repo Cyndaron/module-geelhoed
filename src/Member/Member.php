@@ -9,9 +9,9 @@ use Cyndaron\Geelhoed\Hour\Hour;
 use Cyndaron\Geelhoed\MemberGraduation;
 use Cyndaron\Geelhoed\Sport;
 use Cyndaron\DBAL\Model;
-use Cyndaron\Page;
+use Cyndaron\View\Page;
 use Cyndaron\User\User;
-use Cyndaron\Util;
+use Cyndaron\Util\Util;
 
 use function Safe\uasort;
 use function Safe\usort;

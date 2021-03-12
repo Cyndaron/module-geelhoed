@@ -7,7 +7,7 @@ use Cyndaron\Geelhoed\Department;
 use Cyndaron\Geelhoed\Location\Location;
 use Cyndaron\Geelhoed\Sport;
 use Cyndaron\DBAL\Model;
-use Cyndaron\Template\ViewHelpers;
+use Cyndaron\View\Template\ViewHelpers;
 
 use function Safe\sprintf;
 use function assert;

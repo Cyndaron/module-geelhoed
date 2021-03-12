@@ -5,7 +5,7 @@ use Cyndaron\Geelhoed\Member\Member;
 use Cyndaron\Geelhoed\Sport;
 use Cyndaron\DBAL\Model;
 use Cyndaron\User\User;
-use Cyndaron\Util;
+use Cyndaron\Util\Util;
 
 use function Safe\scandir;
 use function Safe\strtotime;

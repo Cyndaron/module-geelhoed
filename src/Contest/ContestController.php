@@ -6,15 +6,16 @@ use Cyndaron\DBAL\DBConnection;
 use Cyndaron\Geelhoed\Member\Member;
 use Cyndaron\Geelhoed\PageManagerTabs;
 use Cyndaron\Geelhoed\Sport;
-use Cyndaron\Page;
-use Cyndaron\PlainTextMail;
+use Cyndaron\View\Page;
+use Cyndaron\Util\Mail\Mail;
 use Cyndaron\Request\RequestParameters;
-use Cyndaron\Setting;
-use Cyndaron\Template\Template;
-use Cyndaron\Template\ViewHelpers;
+use Cyndaron\Util\Setting;
+use Cyndaron\View\Template\Template;
+use Cyndaron\View\Template\ViewHelpers;
 use Cyndaron\User\User;
 use Cyndaron\User\UserLevel;
-use Cyndaron\Util;
+use Cyndaron\Util\Util;
+use Exception;
 use PhpOffice\PhpSpreadsheet\Shared\Date as PHPSpreadsheetDate;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use Safe\DateTime;
@@ -22,6 +23,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
+use Symfony\Component\Mime\Address;
 use function Safe\date;
 use function Safe\error_log;
 use function Safe\sprintf;
@@ -319,7 +321,7 @@ final class ContestController extends Controller
         $contest = Contest::loadFromDatabase($id);
         if ($contest === null)
         {
-            throw new \Exception('Wedstrijd niet gevonden!');
+            throw new Exception('Wedstrijd niet gevonden!');
         }
 
         $spreadsheet = new Spreadsheet();
@@ -548,7 +550,7 @@ final class ContestController extends Controller
             $redirectUrl = "https://{$_SERVER['HTTP_HOST']}/contest/myContests";
             $response = $this->doMollieTransaction($contestMembers, 'Inschrijving wedstrijdjudo Sportschool Geelhoed', $due, $redirectUrl);
         }
-        catch (\Exception $e)
+        catch (Exception $e)
         {
             User::addNotification('De betaling is mislukt!');
             $response = new RedirectResponse("/contest/myContests");
@@ -717,7 +719,7 @@ final class ContestController extends Controller
             {
                 $mailText = "{$subscription->getMember()->getProfile()->getFullName()} heeft zijn/haar inschrijving voor {$subscription->getContest()->name} gewijzigd. Het gewicht is nu {$subscription->weight} kg en de graduatie is: {$subscription->getGraduation()->name}.";
                 $to = Setting::get('geelhoed_contestMaintainerMail');
-                $mail = new PlainTextMail($to, 'Wijziging inschrijving', $mailText);
+                $mail = new Mail(new Address($to), 'Wijziging inschrijving', $mailText);
                 $mail->send();
             }
         }
@@ -853,7 +855,7 @@ final class ContestController extends Controller
         ]);
 
         assert($user->email !== null);
-        $mail = new PlainTextMail($user->email, 'Ouderaccount aangemaakt', $mailBody);
+        $mail = new Mail(new Address($user->email), 'Ouderaccount aangemaakt', $mailBody);
         return $mail->send();
     }
 
