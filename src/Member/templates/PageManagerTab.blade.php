@@ -132,7 +132,7 @@
                     </td>
                     <td>
                         {{ $member->iban }}<br>
-                        <abbr title="Voor kwartaal dat begint op {{ \Cyndaron\Util::getStartOfNextQuarter()->format('d-m-Y') }}">Kw.bedrag: </abbr>{{ \Cyndaron\View\Template\ViewHelpers::formatEuro($member->getQuarterlyFee()) }}
+                        <abbr title="Voor kwartaal dat begint op {{ \Cyndaron\Util\Util::getStartOfNextQuarter()->format('d-m-Y') }}">Kw.bedrag: </abbr>{{ \Cyndaron\View\Template\ViewHelpers::formatEuro($member->getQuarterlyFee()) }}
                     </td>
                     <td>
                         @if ($member->isContestant)<abbr title="Wedstrijdjudoka">W</abbr><br>@endif
