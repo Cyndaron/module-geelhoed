@@ -1,7 +1,7 @@
 @extends ('Index')
 
 @section ('contents')
-    @component('Widget/Toolbar')
+    @component('View/Widget/Toolbar')
         @slot('left')
             <a href="/pagemanager/member" class="btn btn-outline-cyndaron">« Terug naar Ledenbeheer</a>
         @endslot

@@ -3,9 +3,9 @@
 @section ('contents')
     @php /** @var \Cyndaron\Geelhoed\Contest\Contest $contest */@endphp
 
-    @component('Widget/Toolbar')
+    @component('View/Widget/Toolbar')
         @slot('right')
-            @include('Widget/Button', ['kind' => 'th', 'link' => '/contest/subscriptionListExcel/' . $contest->id, 'text' => 'Excel-export'])
+            @include('View/Widget/Button', ['kind' => 'th', 'link' => '/contest/subscriptionListExcel/' . $contest->id, 'text' => 'Excel-export'])
         @endslot
     @endcomponent
 

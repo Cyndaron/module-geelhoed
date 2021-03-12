@@ -7,7 +7,7 @@
         <input type="hidden" name="date" value="{{ $date }}">
 
         @for ($i = 1; $i <= $maxNames; $i++)
-            @include('Widget/Form/BasicInput', ['id' => "name[]", 'label' => "Naam judoka {$i}", 'required' => ($i === 1)])
+            @include('View/Widget/Form/BasicInput', ['id' => "name[]", 'label' => "Naam judoka {$i}", 'required' => ($i === 1)])
         @endfor
 
         <button type="submit" class="btn btn-primary">Reservering afronden</button>

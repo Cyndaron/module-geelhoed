@@ -1,4 +1,4 @@
-@component('Widget/Toolbar')
+@component('View/Widget/Toolbar')
     @slot('right')
         <button id="gcm-new" class="btn btn-success" type="button"><span class="glyphicon glyphicon-plus"></span> Nieuwe wedstrijd</button>
     @endslot
@@ -45,27 +45,27 @@
     </tbody>
 </table>
 
-@component('Widget/Modal', ['id' => 'gcm-edit-dialog', 'title' => 'Wedstrijd toevoegen/bewerken', 'sizeClass' => 'modal-lg'])
+@component('View/Widget/Modal', ['id' => 'gcm-edit-dialog', 'title' => 'Wedstrijd toevoegen/bewerken', 'sizeClass' => 'modal-lg'])
     @slot('body')
         <input type="hidden" id="gcm-edit-id" value="">
 
-        @include('Widget/Form/BasicInput', ['id' => 'gcm-edit-name', 'label' => 'Naam', 'required' => true])
-        @include('Widget/Form/Textarea', ['id' => 'gcm-edit-description', 'label' => 'Beschrijving', 'placeholder' => '(Vul hier meer informatie over de wedstrijd in, zoals de weegtijden.)'])
-        @include('Widget/Form/BasicInput', ['id' => 'gcm-edit-location', 'label' => 'Locatie', 'required' => true])
-        @include('Widget/Form/Select', ['id' => 'gcm-edit-sportId', 'label' => 'Sport', 'required' => true, 'options' => \Cyndaron\Geelhoed\Sport::fetchAllForSelect()])
-        @component('Widget/Form/FormWrapper', ['id' => 'gcm-edit-deadline-date', 'label' => 'Inschrijvings-deadline'])
+        @include('View/Widget/Form/BasicInput', ['id' => 'gcm-edit-name', 'label' => 'Naam', 'required' => true])
+        @include('View/Widget/Form/Textarea', ['id' => 'gcm-edit-description', 'label' => 'Beschrijving', 'placeholder' => '(Vul hier meer informatie over de wedstrijd in, zoals de weegtijden.)'])
+        @include('View/Widget/Form/BasicInput', ['id' => 'gcm-edit-location', 'label' => 'Locatie', 'required' => true])
+        @include('View/Widget/Form/Select', ['id' => 'gcm-edit-sportId', 'label' => 'Sport', 'required' => true, 'options' => \Cyndaron\Geelhoed\Sport::fetchAllForSelect()])
+        @component('View/Widget/Form/FormWrapper', ['id' => 'gcm-edit-deadline-date', 'label' => 'Inschrijvings-deadline'])
             @slot('right')
                 <input id="gcm-edit-deadline-date" type="date" class="form-control form-control-inline" required>
                 <input id="gcm-edit-deadline-time" type="time" class="form-control form-control-inline" required>
             @endslot
         @endcomponent
-        @component('Widget/Form/FormWrapper', ['id' => 'gcm-edit-registration-change-deadline-date', 'label' => 'Deadline voor wijzigingen'])
+        @component('View/Widget/Form/FormWrapper', ['id' => 'gcm-edit-registration-change-deadline-date', 'label' => 'Deadline voor wijzigingen'])
             @slot('right')
                 <input id="gcm-edit-registration-change-deadline-date" type="date" class="form-control form-control-inline" required>
                 <input id="gcm-edit-registration-change-deadline-time" type="time" class="form-control form-control-inline" required>
             @endslot
         @endcomponent
-        @component('Widget/Form/FormWrapper', ['id' => 'gcm-edit-price', 'label' => 'Prijs'])
+        @component('View/Widget/Form/FormWrapper', ['id' => 'gcm-edit-price', 'label' => 'Prijs'])
             @slot('right')
                 <div class="input-group">
                     <div class="input-group-prepend">

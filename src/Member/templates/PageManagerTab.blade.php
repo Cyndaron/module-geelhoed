@@ -1,7 +1,7 @@
 <link href="/vendor/cyndaron/module-geelhoed/src/geelhoed.css" type="text/css" rel="stylesheet" />
 
 <div id="geelhoed-membermanager">
-    @component('Widget/Toolbar')
+    @component('View/Widget/Toolbar')
         @slot('left')
             IBAN:
             <select id="gum-filter-iban" class="custom-select form-control-inline">
@@ -152,7 +152,7 @@
 </div>
 
 <form method="post" id="gum-user-popup">
-    @component('Widget/Modal', [
+    @component('View/Widget/Modal', [
         'id' => 'gum-edit-user-dialog',
         'sizeClass' => 'modal-dialog-scrollable modal-xl',
         'title' => 'Lid bewerken'])
@@ -181,44 +181,44 @@
                     <input type="hidden" name="id" value="0">
                     <input type="hidden" name="csrfToken" value="{{ \Cyndaron\User\User::getCSRFToken('member', 'save') }}">
                     <input type="hidden" name="csrfTokenRemoveGraduation" value="{{ \Cyndaron\User\User::getCSRFToken('member', 'removeGraduation') }}">
-                    @include('Widget/Form/BasicInput', ['id' => 'username', 'label' => 'Gebruikersnaam', 'placeholder' => 'Bijv.: ammulder', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'email', 'type' => 'email', 'label' => 'Eigen e-mailadres', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'username', 'label' => 'Gebruikersnaam', 'placeholder' => 'Bijv.: ammulder', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'email', 'type' => 'email', 'label' => 'Eigen e-mailadres', 'value' => ''])
                 </div>
                 <div class="tab-pane fade" id="personal-data" role="tabpanel" aria-labelledby="personal-data-tab">
-                    @include('Widget/Form/BasicInput', ['id' => 'firstName', 'label' => 'Voornaam', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'tussenvoegsel', 'label' => 'Tussenvoegsel', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'lastName', 'label' => 'Achternaam', 'value' => ''])
-                    @include('Widget/Form/Select', ['id' => 'gender', 'label' => 'Geslacht', 'options' => ['male' => 'man', 'female' => 'vrouw']])
-                    @include('Widget/Form/BasicInput', ['id' => 'dateOfBirth', 'type' => 'date', 'required' => true, 'label' => 'Geboortedatum', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'firstName', 'label' => 'Voornaam', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'tussenvoegsel', 'label' => 'Tussenvoegsel', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'lastName', 'label' => 'Achternaam', 'value' => ''])
+                    @include('View/Widget/Form/Select', ['id' => 'gender', 'label' => 'Geslacht', 'options' => ['male' => 'man', 'female' => 'vrouw']])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'dateOfBirth', 'type' => 'date', 'required' => true, 'label' => 'Geboortedatum', 'value' => ''])
 
                     <h4>Contactgegevens:</h4>
-                    @include('Widget/Form/BasicInput', ['id' => 'parentEmail', 'type' => 'email', 'label' => 'E-mailadres ouders', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'phoneNumbers', 'label' => 'Telefoonnummers', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'street', 'label' => 'Straatnaam', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'houseNumber', 'label' => 'Huisnummer', 'type' => 'number', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'houseNumberAddition', 'label' => 'Huisnummertoevoeging', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'postalCode', 'label' => 'Postcode', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'city', 'label' => 'Woonplaats', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'parentEmail', 'type' => 'email', 'label' => 'E-mailadres ouders', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'phoneNumbers', 'label' => 'Telefoonnummers', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'street', 'label' => 'Straatnaam', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'houseNumber', 'label' => 'Huisnummer', 'type' => 'number', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'houseNumberAddition', 'label' => 'Huisnummertoevoeging', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'postalCode', 'label' => 'Postcode', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'city', 'label' => 'Woonplaats', 'value' => ''])
 
                     <h4>Betaalgegevens</h4>
-                    @include('Widget/Form/Checkbox', ['id' => 'freeParticipation', 'label' => 'Mag gratis meedoen'])
-                    @include('Widget/Form/Number', ['id' => 'discount', 'label' => 'Korting', 'value' => 0.00, 'min' => '', 'step' => 0.01])
-                    @include('Widget/Form/Checkbox', ['id' => 'temporaryStop', 'label' => 'Tijdelijke stop'])
-                    @include('Widget/Form/Select', ['id' => 'paymentMethod', 'label' => 'Betaalwijze', 'options' => \Cyndaron\Geelhoed\Member\Member::PAYMENT_METHODS])
-                    @include('Widget/Form/BasicInput', ['id' => 'iban', 'label' => 'IBAN-nummer', 'value' => ''])
-                    @include('Widget/Form/BasicInput', ['id' => 'ibanHolder', 'label' => 'Rekeninghouder', 'value' => ''])
-                    @include('Widget/Form/Checkbox', ['id' => 'paymentProblem', 'label' => 'Heeft betalingsprobleem'])
-                    @include('Widget/Form/Textarea', ['id' => 'paymentProblemNote', 'label' => 'Notitie betalingsprobleem', 'value' => ''])
+                    @include('View/Widget/Form/Checkbox', ['id' => 'freeParticipation', 'label' => 'Mag gratis meedoen'])
+                    @include('View/Widget/Form/Number', ['id' => 'discount', 'label' => 'Korting', 'value' => 0.00, 'min' => '', 'step' => 0.01])
+                    @include('View/Widget/Form/Checkbox', ['id' => 'temporaryStop', 'label' => 'Tijdelijke stop'])
+                    @include('View/Widget/Form/Select', ['id' => 'paymentMethod', 'label' => 'Betaalwijze', 'options' => \Cyndaron\Geelhoed\Member\Member::PAYMENT_METHODS])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'iban', 'label' => 'IBAN-nummer', 'value' => ''])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'ibanHolder', 'label' => 'Rekeninghouder', 'value' => ''])
+                    @include('View/Widget/Form/Checkbox', ['id' => 'paymentProblem', 'label' => 'Heeft betalingsprobleem'])
+                    @include('View/Widget/Form/Textarea', ['id' => 'paymentProblemNote', 'label' => 'Notitie betalingsprobleem', 'value' => ''])
 
                 </div>
                 <div class="tab-pane fade" id="sport" role="tabpanel" aria-labelledby="contact-tab">
-                    @include('Widget/Form/BasicInput', ['id' => 'joinedAt', 'type' => 'date', 'label' => 'Lid sinds'])
-                    @include('Widget/Form/BasicInput', ['id' => 'jbnNumber', 'label' => 'JBN-nummer'])
-                    @include('Widget/Form/Select', ['id' => 'jbnNumberLocation', 'label' => 'Locatie JBN-nummer', 'options' => ['' => 'n.v.t.', 'Walcheren' => 'Walcheren', 'Bevelanden' => 'Bevelanden']])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'joinedAt', 'type' => 'date', 'label' => 'Lid sinds'])
+                    @include('View/Widget/Form/BasicInput', ['id' => 'jbnNumber', 'label' => 'JBN-nummer'])
+                    @include('View/Widget/Form/Select', ['id' => 'jbnNumberLocation', 'label' => 'Locatie JBN-nummer', 'options' => ['' => 'n.v.t.', 'Walcheren' => 'Walcheren', 'Bevelanden' => 'Bevelanden']])
 
-                    @include('Widget/Form/Checkbox', ['id' => 'isContestant', 'label' => 'Wedstrijdjudoka'])
+                    @include('View/Widget/Form/Checkbox', ['id' => 'isContestant', 'label' => 'Wedstrijdjudoka'])
 
-                    @include('Widget/Form/Textarea', ['id' => 'notes', 'label' => 'Bijzonderheden', 'value' => '', 'placeholder' => 'Bijzonderheden zoals allergieën en andere zaken die voor de docent van belang kunnen zijn.'])
+                    @include('View/Widget/Form/Textarea', ['id' => 'notes', 'label' => 'Bijzonderheden', 'value' => '', 'placeholder' => 'Bijzonderheden zoals allergieën en andere zaken die voor de docent van belang kunnen zijn.'])
 
                     <h4>Behaalde banden</h4>
                     <ul id="gum-user-dialog-graduation-list">
@@ -252,7 +252,7 @@
                                 <div class="card-body">
                                     @foreach ($hours as $hour)
                                         @php $weekday = \Cyndaron\View\Template\ViewHelpers::getDutchWeekday($hour->day) @endphp
-                                        @include('Widget/Form/Checkbox', ['id' => "hour-{$hour->id}", 'label' => "{$weekday}, {$hour->getRange()} {$hour->getSportName()}"])
+                                        @include('View/Widget/Form/Checkbox', ['id' => "hour-{$hour->id}", 'label' => "{$weekday}, {$hour->getRange()} {$hour->getSportName()}"])
                                     @endforeach
                                 </div>
                             </div>

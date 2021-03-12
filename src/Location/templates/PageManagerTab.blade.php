@@ -1,6 +1,6 @@
-@component('Widget/Toolbar')
+@component('View/Widget/Toolbar')
     @slot('right')
-        @include('Widget/Button', ['kind' => 'new', 'link' => '/editor/location', 'title' => 'Nieuwe locatie', 'text' => 'Nieuwe locatie'])
+        @include('View/Widget/Button', ['kind' => 'new', 'link' => '/editor/location', 'title' => 'Nieuwe locatie', 'text' => 'Nieuwe locatie'])
     @endslot
 @endcomponent
 

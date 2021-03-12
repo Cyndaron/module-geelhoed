@@ -7,9 +7,9 @@
     @endphp
 
     @if ($canManage)
-        @component('Widget/Toolbar2')
+        @component('View/Widget/Toolbar2')
             @slot('left')
-                @include('Widget/Button', ['kind' => 'list', 'link' => '/contest/manageOverview', 'title' => 'Wedstrijdbeheer', 'text' => 'Wedstrijdbeheer'])
+                @include('View/Widget/Button', ['kind' => 'list', 'link' => '/contest/manageOverview', 'title' => 'Wedstrijdbeheer', 'text' => 'Wedstrijdbeheer'])
             @endslot
             @slot('middle')
                 <button id="gcv-add-date" class="btn btn-success" data-toggle="modal" data-target="#gcv-add-date-dialog">Datum toevoegen</button>
@@ -137,13 +137,13 @@
     @endif
 
     @if ($canManage)
-        @component('Widget/Modal', ['id' => 'gcv-add-date-dialog', 'title' => 'Datum toevoegen', 'sizeClass' => 'modal-lg'])
+        @component('View/Widget/Modal', ['id' => 'gcv-add-date-dialog', 'title' => 'Datum toevoegen', 'sizeClass' => 'modal-lg'])
             @slot('body')
                 <form id="gcv-add-date-form" method="post">
                     <input type="hidden" id="gcv-edit-id" name="contestId" value="{{ $contest->id }}">
                     <input type="hidden" name="csrfToken" value="{{ $addDateCsrfToken }}">
 
-                    @component('Widget/Form/FormWrapper', ['id' => 'gcv-edit-date', 'label' => 'Datum en tijd'])
+                    @component('View/Widget/Form/FormWrapper', ['id' => 'gcv-edit-date', 'label' => 'Datum en tijd'])
                         @slot('right')
                             <input id="gcv-edit-date" name="date" type="date" class="form-control form-control-inline" required>
                             <input id="gcv-edit-time" name="time" type="time" class="form-control form-control-inline" required>
@@ -152,7 +152,7 @@
                     <h4>Leeftijdklassen</h4>
                     <div style="column-count: 2;">
                         @foreach (\Cyndaron\Geelhoed\Contest\ContestClass::fetchAll() as $class)
-                            @include ('Widget/Form/Checkbox', ['id' => 'class-' . $class->id, 'description' => $class->name, 'checked' => false])
+                            @include ('View/Widget/Form/Checkbox', ['id' => 'class-' . $class->id, 'description' => $class->name, 'checked' => false])
                         @endforeach
                     </div>
                 </form>

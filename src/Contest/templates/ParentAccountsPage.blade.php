@@ -1,7 +1,7 @@
 @extends ('Index')
 
 @section ('contents')
-    @component('Widget/Toolbar2')
+    @component('View/Widget/Toolbar2')
         @slot('right')
             <button id="gpam-new" class="btn btn-success" data-toggle="modal" data-target="#gpm-edit-dialog">Toevoegen</button>
         @endslot
@@ -55,17 +55,17 @@
 
     </table>
 
-    @component('Widget/Modal', ['id' => 'gpm-edit-dialog', 'title' => 'Ouderaccount toevoegen/bewerken', 'sizeClass' => 'modal-lg'])
+    @component('View/Widget/Modal', ['id' => 'gpm-edit-dialog', 'title' => 'Ouderaccount toevoegen/bewerken', 'sizeClass' => 'modal-lg'])
         @slot('body')
             <input type="hidden" id="gpm-edit-id" name="id" value="">
             <input type="hidden" id="gpm-edit-csrfToken" name="id" value="{{ \Cyndaron\User\User::getCSRFToken('contest', 'createParentAccount') }}">
 
-            @include('Widget/Form/BasicInput', ['id' => 'gpm-edit-firstName', 'label' => 'Voornaam', 'required' => false])
-            @include('Widget/Form/BasicInput', ['id' => 'gpm-edit-initials', 'label' => 'Initialen', 'required' => true])
-            @include('Widget/Form/BasicInput', ['id' => 'gpm-edit-tussenvoegsel', 'label' => 'Tussenvoegsel', 'required' => false])
-            @include('Widget/Form/BasicInput', ['id' => 'gpm-edit-lastName', 'label' => 'Achternaam', 'required' => true])
-            @include('Widget/Form/BasicInput', ['id' => 'gpm-edit-email', 'label' => 'E-mailadres', 'required' => true])
-            @include('Widget/Form/Checkbox',   ['id' => 'gpm-edit-sendIntroductionMail', 'label' => 'Introductiemail sturen', 'checked' => true])
+            @include('View/Widget/Form/BasicInput', ['id' => 'gpm-edit-firstName', 'label' => 'Voornaam', 'required' => false])
+            @include('View/Widget/Form/BasicInput', ['id' => 'gpm-edit-initials', 'label' => 'Initialen', 'required' => true])
+            @include('View/Widget/Form/BasicInput', ['id' => 'gpm-edit-tussenvoegsel', 'label' => 'Tussenvoegsel', 'required' => false])
+            @include('View/Widget/Form/BasicInput', ['id' => 'gpm-edit-lastName', 'label' => 'Achternaam', 'required' => true])
+            @include('View/Widget/Form/BasicInput', ['id' => 'gpm-edit-email', 'label' => 'E-mailadres', 'required' => true])
+            @include('View/Widget/Form/Checkbox',   ['id' => 'gpm-edit-sendIntroductionMail', 'label' => 'Introductiemail sturen', 'checked' => true])
         @endslot
         @slot('footer')
             <button type="button" class="btn btn-success" id="gpm-edit-save">Opslaan</button>

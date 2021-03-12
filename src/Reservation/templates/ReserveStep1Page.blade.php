@@ -9,7 +9,7 @@
 
     <form method="post" action="/reservation/step-2">
         <input type="hidden" name="csrfToken" value="{{ $csrfToken }}">
-        @include('Widget/Form/Select', ['id' => 'hourId', 'label' => 'Lesuur', 'required' => true, 'options' => $hoursSelect])
+        @include('View/Widget/Form/Select', ['id' => 'hourId', 'label' => 'Lesuur', 'required' => true, 'options' => $hoursSelect])
         <button type="submit" class="btn btn-success">Volgende</button>
     </form>
 

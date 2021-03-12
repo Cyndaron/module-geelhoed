@@ -1,9 +1,9 @@
 @extends ('Index')
 
 @section ('contents')
-    @component('Widget/Toolbar')
+    @component('View/Widget/Toolbar')
         @slot('right')
-            @include('Widget/Button', ['kind' => 'th', 'link' => '/contest/contestantsListExcel/', 'text' => 'Excel-export'])
+            @include('View/Widget/Button', ['kind' => 'th', 'link' => '/contest/contestantsListExcel/', 'text' => 'Excel-export'])
         @endslot
     @endcomponent
 

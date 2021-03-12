@@ -5,13 +5,13 @@
     <form method="post" action="/contest/subscribe/{{ $contest->id }}">
         <input type="hidden" name="csrfToken" value="{{ \Cyndaron\User\User::getCSRFToken('contest', 'subscribe') }}"/>
         <input type="hidden" name="memberId" value="{{ $member->id }}"/>
-        @component ('Widget/Form/FormWrapper', ['label' => 'Naam'])
+        @component ('View/Widget/Form/FormWrapper', ['label' => 'Naam'])
             @slot('right')
                 {{ $member->getProfile()->getFullName() }}
             @endslot
         @endcomponent
         @php $sport = $contest->getSport(); $sportName = strtolower($sport->name); @endphp
-        @component ('Widget/Form/FormWrapper', ['id' => 'graduationId', 'label' => "Band {$sportName}"])
+        @component ('View/Widget/Form/FormWrapper', ['id' => 'graduationId', 'label' => "Band {$sportName}"])
             @slot('right')
                 <select id="graduationId" name="graduationId" class="form-control custom-select" required>
                     @foreach (\Cyndaron\Geelhoed\Graduation::fetchAllBySport($sport) as $graduation)
@@ -22,19 +22,19 @@
             @endslot
         @endcomponent
         @if ($member->jbnNumber === '')
-            @component ('Widget/Form/FormWrapper', ['id' => 'jbnNumber', 'label' => 'JBN-nummer'])
+            @component ('View/Widget/Form/FormWrapper', ['id' => 'jbnNumber', 'label' => 'JBN-nummer'])
                 @slot('right')
                     <input id="jbnNumber" name="jbnNumber" class="form-control" required>
                 @endslot
             @endcomponent
         @endif
-        @component ('Widget/Form/FormWrapper', ['id' => 'weight', 'label' => 'Gewicht (hele kg)'])
+        @component ('View/Widget/Form/FormWrapper', ['id' => 'weight', 'label' => 'Gewicht (hele kg)'])
             @slot('right')
                 <input id="weight" name="weight" type="number" class="form-control" required>
             @endslot
         @endcomponent
-        @include('Widget/Form/Textarea', ['id' => 'comments', 'label' => 'Opmerkingen'])
-        @component ('Widget/Form/FormWrapper', ['label' => 'Inschrijfgeld'])
+        @include('View/Widget/Form/Textarea', ['id' => 'comments', 'label' => 'Opmerkingen'])
+        @component ('View/Widget/Form/FormWrapper', ['label' => 'Inschrijfgeld'])
             @slot('right')
                 {{ $contest->price|euro }}
             @endslot
@@ -44,7 +44,7 @@
             Kloppen alle bovenstaande gegevens? Klik dan op de knop “Inschrijven”.
             <div class="alert alert-warning">Let op: pas na betaling is je inschrijving definitief.</div>
         </div>
-        @component ('Widget/Form/FormWrapper')
+        @component ('View/Widget/Form/FormWrapper')
             @slot('right')
                 <input type="submit" class="btn btn-lg btn-primary" value="Inschrijven">
             @endslot
