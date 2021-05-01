@@ -185,6 +185,10 @@ final class Member extends Model
         {
             return 0.00;
         }
+        if ($this->temporaryStop)
+        {
+            return 0.00;
+        }
         $sports = $this->getSports();
         if (count($sports) === 0)
         {
