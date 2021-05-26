@@ -35,6 +35,10 @@
     {
       "type": "vcs",
       "url":  "https://github.com/Cyndaron/module-ticketsale"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/Cyndaron/request"
     }
   ],
   "minimum-stability": "dev",

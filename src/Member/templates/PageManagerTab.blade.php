@@ -190,6 +190,7 @@
                     @include('View/Widget/Form/BasicInput', ['id' => 'lastName', 'label' => 'Achternaam', 'value' => ''])
                     @include('View/Widget/Form/Select', ['id' => 'gender', 'label' => 'Geslacht', 'options' => ['male' => 'man', 'female' => 'vrouw']])
                     @include('View/Widget/Form/BasicInput', ['id' => 'dateOfBirth', 'type' => 'date', 'required' => true, 'label' => 'Geboortedatum', 'value' => ''])
+                    @include('View/Widget/Form/Checkbox', ['id' => 'optOut', 'label' => 'Alleen noodzakelijke communicatie (recht van verzet)'])
 
                     <h4>Contactgegevens:</h4>
                     @include('View/Widget/Form/BasicInput', ['id' => 'parentEmail', 'type' => 'email', 'label' => 'E-mailadres ouders', 'value' => ''])

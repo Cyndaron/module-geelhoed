@@ -158,6 +158,7 @@ final class MemberController extends Controller
         $user->city = $post->getSimpleString('city');
         $user->dateOfBirth = $post->getDate('dateOfBirth');
         $user->notes = $post->getHTML('notes');
+        $user->optOut = $post->getBool('optOut');
 
         return $user;
     }
