@@ -7,6 +7,7 @@ use function array_filter;
 use function array_key_exists;
 use function Safe\usort;
 use function strcasecmp;
+use function trim;
 
 final class DirectDebit
 {
@@ -54,6 +55,7 @@ final class DirectDebit
                 $profile = $result->members[0]->getProfile();
                 $result->ibanHolder = "$profile->tussenvoegsel $profile->lastName";
             }
+            $result->ibanHolder = trim($result->ibanHolder);
         }
         $results = array_filter($results, static function(DirectDebit $result)
         {
