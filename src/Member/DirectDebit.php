@@ -6,6 +6,7 @@ namespace Cyndaron\Geelhoed\Member;
 use function array_filter;
 use function array_key_exists;
 use function Safe\usort;
+use function strcasecmp;
 
 final class DirectDebit
 {
@@ -60,7 +61,7 @@ final class DirectDebit
         });
         usort($results, static function(DirectDebit $result1, DirectDebit $result2)
         {
-            return $result1->ibanHolder <=> $result2->ibanHolder;
+            return strcasecmp($result1->ibanHolder, $result2->ibanHolder);
         });
 
         return $results;
