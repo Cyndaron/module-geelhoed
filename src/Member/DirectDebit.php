@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Cyndaron\Geelhoed\Member;
 
+use function array_filter;
 use function array_key_exists;
+use function Safe\usort;
 
 final class DirectDebit
 {
@@ -52,6 +54,14 @@ final class DirectDebit
                 $result->ibanHolder = "$profile->tussenvoegsel $profile->lastName";
             }
         }
+        $results = array_filter($results, static function(DirectDebit $result)
+        {
+            return $result->getTotalQuarterlyFee() !== 0.00;
+        });
+        usort($results, static function(DirectDebit $result1, DirectDebit $result2)
+        {
+            return $result1->ibanHolder <=> $result2->ibanHolder;
+        });
 
         return $results;
     }
