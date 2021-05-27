@@ -30,7 +30,7 @@ final class DirectDebit
     {
         /** @var self[] $results */
         $results = [];
-        $members = Member::fetchAll(["iban <> ''"], [], 'ORDER BY iban');
+        $members = Member::fetchAll(["iban <> ''", "paymentMethod = 'incasso'"], [], 'ORDER BY iban');
         foreach ($members as $member)
         {
             // The IBAN holder might not be filled in on every member record.
